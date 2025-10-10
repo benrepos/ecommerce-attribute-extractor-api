@@ -5,14 +5,13 @@ import typing as t
 import gradio as gr
 import requests
 
-DEFAULT_BASE_URL = os.getenv("BASE_URL", "http://localhost:8000")
+DEFAULT_BASE_URL = os.getenv("BASE_URL", "http://localhost:8080")
 DEFAULT_API_KEY = os.getenv("API_KEY", "")
 
 def parse_schema_attributes(raw: str) -> t.List[str]:
     if not raw.strip():
         return []
     return [s.strip() for s in raw.split(",") if s.strip()]
-
 
 def tidy_values(values: t.List[str]) -> t.List[str]:
     unique: t.Dict[str, str] = {}
