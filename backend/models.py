@@ -1,9 +1,18 @@
+"""
+Models module for the backend.
+
+This module defines the model functions for LLM extraction.
+"""
+
 import json
-from backend.schemas import ExtractResponse, CleanedExtractResponse
 from openai import OpenAI
+from backend.schemas import ExtractResponse, CleanedExtractResponse
 from backend.config import OPENAI_API_KEY
 
 def get_openai_client():
+    """
+    Set up the OpenAI client.
+    """
     return OpenAI(api_key=OPENAI_API_KEY)
 
 #Run the exploratory approach (LLM picks the names)

@@ -1,3 +1,9 @@
+"""
+Configuration module for the backend.
+
+This module loads environment variables from a .env file and provides access to them.
+"""
+
 import os
 from dotenv import load_dotenv
 
