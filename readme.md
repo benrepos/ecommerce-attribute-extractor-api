@@ -81,7 +81,7 @@ All endpoints require the header `x-api-key: <API_KEY>`.
 ```json
 {
   "attributes": [
-    { "name": "Color", "value": ["Red", "White"] }
+    { "name": "Colour", "value": ["Red", "White"] }
   ]
 }
 ```
@@ -94,7 +94,7 @@ All endpoints require the header `x-api-key: <API_KEY>`.
 {
   "title": "string",
   "description": "string",
-  "schema_attributes": ["Color", "Size", "Material"]
+  "schema_attributes": ["Colour", "Size", "Material"]
 }
 ```
 - **Response**: `ExtractResponse` (same shape as `/extract`).
@@ -107,7 +107,7 @@ All endpoints require the header `x-api-key: <API_KEY>`.
 {
   "title": "string",
   "description": "string",
-  "schema_attributes": ["Color", "Size", "Material"],
+  "schema_attributes": ["Colour", "Size", "Material"],
   "non_targeted_output": {},
   "targeted_output": {}
 }
@@ -117,7 +117,7 @@ All endpoints require the header `x-api-key: <API_KEY>`.
 ```json
 {
   "attributes": [
-    { "name": "Color", "value": ["Red", "White"], "method": "non targeted; targeted" }
+    { "name": "Colour", "value": ["Red", "White"], "method": "non targeted; targeted" }
   ]
 }
 ```
