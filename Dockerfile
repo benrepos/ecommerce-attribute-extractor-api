@@ -18,5 +18,9 @@ COPY . .
 # Expose port
 EXPOSE 8080
 
+# Create entrypoint script to handle PORT env var
+RUN echo '#!/bin/sh\nexec uvicorn main:app --host 0.0.0.0 --port "${PORT:-8080}"' > /entrypoint.sh && \
+    chmod +x /entrypoint.sh
+
 # Start FastAPI with uvicorn using the Cloud Run $PORT
-CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8080}"]
+ENTRYPOINT ["/entrypoint.sh"]
