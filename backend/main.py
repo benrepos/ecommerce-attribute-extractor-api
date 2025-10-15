@@ -3,7 +3,8 @@ Main FastAPI application module.
 
 This module defines the FastAPI app and its endpoints for handling requests.
 """
-
+import os
+import uvicorn
 from fastapi import FastAPI, HTTPException, Header
 from backend.config import API_KEY
 from backend.models import run_targeted_prompt, run_extraction_basic, run_hybrid_prompt
@@ -103,3 +104,8 @@ async def extract_hybrid_endpoint(request: ExtractRequestHybrid, x_api_key: str 
     )
 
     return attributes
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))  # Cloud Run injects PORT
+    uvicorn.run("backend.main:app", host="0.0.0.0", port=port)
